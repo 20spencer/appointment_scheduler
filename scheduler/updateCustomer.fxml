@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduler.UpdateCustomerController">
+    <children>
+        <GridPane hgap="20.0" layoutX="50.0" layoutY="125.0" vgap="10.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="60.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <Label text="Customer ID:" />
+                <Label text="Name:" GridPane.rowIndex="1" />
+                <Label text="Country:" GridPane.rowIndex="2" />
+                <Label text="Region:" GridPane.rowIndex="3" />
+                <Label text="Address:" GridPane.rowIndex="4" />
+                <TextField fx:id="txtCustomerID" editable="false" focusTraversable="false" promptText="Auto Generated" GridPane.columnIndex="1" />
+                <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Postal Code:" GridPane.rowIndex="5" />
+                <Label text="Phone Number:" GridPane.rowIndex="6" />
+                <ComboBox fx:id="cbCountry" onAction="#populateRegions" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <ComboBox fx:id="cbRegion" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="txtAddress" promptText="Street Address, City" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="txtPostalCode" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <TextField fx:id="txtPhone" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            </children>
+        </GridPane>
+        <Label alignment="CENTER" layoutX="64.0" layoutY="14.0" text="UPDATE CUSTOMER" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <HBox alignment="CENTER" layoutX="20.0" layoutY="359.0" prefHeight="30.0" prefWidth="260.0" spacing="154.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="359.0">
+            <children>
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancel" />
+                <Button fx:id="btnUpdate" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnUpdateAction" text="Update" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

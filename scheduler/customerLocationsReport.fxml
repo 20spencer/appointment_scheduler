@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduler.CustomerLocationsReportController">
+   <top>
+      <HBox prefHeight="30.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="13.0" prefWidth="260.0" spacing="50.0">
+               <children>
+                  <Label text="Country:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbCountry" onAction="#fillRegionTable" prefWidth="130.0" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <center>
+      <TableView fx:id="tvRegion" prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colRegionMain" prefWidth="150.0" text="Region" />
+          <TableColumn fx:id="colRegionCustomers" prefWidth="100.0" text="Customers" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <VBox prefHeight="50.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lblTotal" prefHeight="17.0" prefWidth="119.0" text="Total: " />
+               </children>
+               <padding>
+                  <Insets left="150.0" top="2.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="50.0" prefWidth="260.0" spacing="158.0">
+               <children>
+                  <Button fx:id="btnClose" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+                  <Button fx:id="btnReports" mnemonicParsing="false" onAction="#btnReportsAction" text="Reports" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

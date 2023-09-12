@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduler.AddAppointmentController">
+    <children>
+        <GridPane hgap="20.0" layoutX="50.0" layoutY="125.0" vgap="10.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="65.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <Label text="Appointment ID:" />
+                <Label text="Title:" GridPane.rowIndex="1" />
+                <Label text="Description:" GridPane.rowIndex="2" />
+                <Label text="Location:" GridPane.rowIndex="3" />
+                <Label text="Type:" GridPane.rowIndex="4" />
+                <TextField editable="false" focusTraversable="false" promptText="Auto Generated" text="Auto Generated" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></TextField>
+                <TextField fx:id="txtTitle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Start Time:" GridPane.rowIndex="6" />
+                <Label text="End Time:" GridPane.rowIndex="7" />
+                <TextField fx:id="txtDescription" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="txtLocation" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="txtType" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <DatePicker fx:id="datepickerDate" editable="false" prefHeight="25.0" prefWidth="225.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="Customer:" GridPane.rowIndex="8" />
+                <Label text="Contact:" GridPane.rowIndex="9" />
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <children>
+                        <ComboBox fx:id="cbStartHour" prefWidth="60.0" visibleRowCount="12" />
+                        <Label text=":">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="cbStartMinute" prefWidth="60.0" />
+                        <VBox fillWidth="false" prefHeight="200.0" prefWidth="40.0">
+                            <children>
+                                <RadioButton fx:id="rbStartAM" mnemonicParsing="false" selected="true" text="AM">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="startTimeToggleGroup" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rbStartPM" mnemonicParsing="false" text="PM" toggleGroup="$startTimeToggleGroup" />
+                            </children>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="132.0" layoutY="255.0" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <children>
+                        <ComboBox fx:id="cbEndHour" prefWidth="60.0" visibleRowCount="12" />
+                        <Label text=":">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="cbEndMinute" prefWidth="60.0" />
+                        <VBox fillWidth="false" prefHeight="200.0" prefWidth="40.0">
+                            <children>
+                                <RadioButton fx:id="rbEndAM" mnemonicParsing="false" selected="true" text="AM">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="endTimeToggleGroup" />
+                           </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rbEndPM" mnemonicParsing="false" text="PM" toggleGroup="$endTimeToggleGroup" />
+                            </children>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </VBox>
+                    </children>
+                </HBox>
+                <ComboBox fx:id="cbCustomer" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <ComboBox fx:id="cbContact" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <Label text="Date:" GridPane.rowIndex="5" />
+            <Label text="User ID:" GridPane.rowIndex="10" />
+            <ComboBox fx:id="cbUserID" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            </children>
+        </GridPane>
+        <Label alignment="CENTER" layoutX="72.0" layoutY="14.0" text="CREATE APPOINTMENT" textAlignment="CENTER" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="14.0">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <HBox alignment="CENTER" layoutX="20.0" layoutY="459.0" prefHeight="27.0" prefWidth="310.0" spacing="147.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+            <children>
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancelAction" text="Cancel" />
+                <Button fx:id="btnAdd" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#btnAddAction" text="Add Appointment" />
+            </children>
+        </HBox>
+    </children>
+
+</AnchorPane>

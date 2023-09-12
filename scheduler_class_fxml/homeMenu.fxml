@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduler.HomeMenuController">
+   <top>
+      <HBox prefHeight="50.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="CUSTOMERS">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="45.0" prefWidth="490.0">
+                     <children>
+                        <Button fx:id="btnReports" mnemonicParsing="false" onAction="#btnReportsAction" text="Reports" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets bottom="5.0" />
+               </HBox.margin></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="5.0" />
+               </HBox.margin>
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <Label text="APPOINTMENTS">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <RadioButton fx:id="rbWeek" mnemonicParsing="false" onAction="#radioButtonToggleAction" text="Week">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggleGroupFilter" />
+                           </toggleGroup>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="rbMonth" mnemonicParsing="false" onAction="#radioButtonToggleAction" text="Month" toggleGroup="$toggleGroupFilter">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="rbAll" mnemonicParsing="false" onAction="#radioButtonToggleAction" selected="true" text="All" toggleGroup="$toggleGroupFilter" />
+                     </children>
+                  </HBox>
+               </children></HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="50.0" prefWidth="760.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="305.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lblCustomerMessage" alignment="TOP_LEFT" prefHeight="54.0" prefWidth="305.0" />
+                     </children></HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="305.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="btnCustomerAdd" mnemonicParsing="false" onAction="#btnCustomerAddAction" prefWidth="60.0" text="Add" />
+                        <Button fx:id="btnCustomerDelete" mnemonicParsing="false" onAction="#btnCustomerDeleteAction" prefWidth="60.0" text="Delete" />
+                        <Button fx:id="btnCustomerUpdate" mnemonicParsing="false" onAction="#btnCustomerUpdateAction" prefWidth="60.0" text="Update" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="500.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lblAppointmentMessage" alignment="TOP_LEFT" prefHeight="50.0" prefWidth="410.0" wrapText="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="305.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="btnAppointmentAdd" mnemonicParsing="false" onAction="#btnAppointmentAddAction" prefWidth="60.0" text="Add" />
+                        <Button fx:id="btnAppointmentDelete" mnemonicParsing="false" onAction="#btnAppointmentDeleteAction" prefWidth="60.0" text="Delete" />
+                        <Button fx:id="btnAppointmentUpdate" mnemonicParsing="false" onAction="#btnAppointmentUpdateAction" prefWidth="60.0" text="Update" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <left>
+      <TableView fx:id="tvCustomers" prefHeight="200.0" prefWidth="610.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colCustomerId" prefWidth="75.0" text="Customer ID" />
+          <TableColumn fx:id="colCustomerName" prefWidth="120.0" text="Name" />
+            <TableColumn fx:id="colCustomerAddress" prefWidth="150.0" text="Address" />
+            <TableColumn fx:id="colCustomerPostalCode" prefWidth="75.0" text="Postal Code" />
+            <TableColumn fx:id="colCustomerPhone" prefWidth="100.0" text="Phone" />
+            <TableColumn fx:id="colCustomerRegion" prefWidth="90.0" text="Region" />
+        </columns>
+      </TableView>
+   </left>
+   <right>
+      <TableView fx:id="tvAppointments" prefHeight="200.0" prefWidth="610.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="colApptId" prefWidth="60.0" text="Appt. ID" />
+            <TableColumn fx:id="colApptTitle" prefWidth="80.0" text="Title" />
+          <TableColumn fx:id="colApptDescription" prefWidth="100.0" text="Description" />
+          <TableColumn fx:id="colApptLocation" prefWidth="100.0" text="Location" />
+            <TableColumn fx:id="colApptContact" prefWidth="100.0" text="Contact" />
+            <TableColumn fx:id="colApptType" prefWidth="110.0" text="Type" />
+            <TableColumn fx:id="colApptStart" prefWidth="120.0" text="Start" />
+            <TableColumn fx:id="colApptEnd" prefWidth="120.0" text="End" />
+            <TableColumn fx:id="colApptCustomerId" prefWidth="60.0" text="Customer ID" />
+        </columns>
+      </TableView>
+   </right>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <center>
+      <Separator orientation="VERTICAL" prefHeight="450.0" prefWidth="23.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets left="3.0" />
+         </padding></Separator>
+   </center>
+</BorderPane>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduler.AppointmentTotalsController">
+   <left>
+      <TableView fx:id="tvType" prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colTypeType" prefWidth="100.0" text="Type" />
+          <TableColumn fx:id="colTypeAppointments" prefWidth="100.0" text="Appointments" />
+        </columns>
+      </TableView>
+   </left>
+   <right>
+      <TableView fx:id="tvMonth" prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colMonthMonth" prefWidth="100.0" text="Month" />
+          <TableColumn fx:id="colMonthAppointments" prefWidth="100.0" text="Appointments" />
+        </columns>
+      </TableView>
+   </right>
+   <bottom>
+      <HBox prefHeight="50.0" prefWidth="200.0" spacing="60.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnClose" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnReports" mnemonicParsing="false" onAction="#btnReportsAction" text="Reports" />
+               </children>
+            </HBox>
+         </children></HBox>
+   </bottom>
+   <top>
+      <HBox prefHeight="50.0" prefWidth="200.0" spacing="60.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="By Type">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="By Month">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </HBox>
+         </children></HBox>
+   </top>
+   <center>
+      <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets left="3.0" />
+         </padding></Separator>
+   </center>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</BorderPane>

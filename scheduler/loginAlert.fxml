@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduler.LoginAlertController">
+   <children>
+      <Button fx:id="btnOkay" layoutX="234.0" layoutY="111.0" mnemonicParsing="false" onAction="#closeWindow" text="Okay" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Label fx:id="lblHeader" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="25.0" prefWidth="280.0" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblContent" alignment="TOP_LEFT" layoutX="14.0" layoutY="46.0" prefHeight="60.0" prefWidth="280.0" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0" />
+   </children>
+</AnchorPane>
