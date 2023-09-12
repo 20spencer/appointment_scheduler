@@ -25,6 +25,6 @@ public class DatabaseConnection {
      * @throws SQLException if there is an issue connecting to the database it will throw this exception.
      */
     public static void establishConnection() throws SQLException {
-        connection = (Connection) DriverManager.getConnection("jdbc:mysql://wgudb.ucertify.com:3306/WJ062VZ?autoReconnect=true&useSSL=false", "U062VZ", "53688675644");
+        connection = (Connection) DriverManager.getConnection("jdbc:mysql:URL", "username", "password");
     }
 }
