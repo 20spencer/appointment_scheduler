@@ -29,6 +29,8 @@ This project is a simple GUI based appointment scheduling application that lets 
 
 Unfortunately the project connected to and used a temporary database, and so it can no longer run properly as the associated database was removed.
 
+It was written and ran using IntelliJ IDEA Community Edition 2020.3
+
 <hr/>
 
 Project Link: https://github.com/20spencer/appointment_scheduler
